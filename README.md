@@ -17,6 +17,9 @@ This repository centralizes those artifacts in one place.
 - `docs/` - protocol, integration guide, troubleshooting, and security notes
 - `javascript-node/` - didactic Node.js server (HTTPS + in-memory users)
 - `dotnet-aspnet/` - didactic ASP.NET server
+- `python-fastapi/` - didactic FastAPI server
+- `go-fiber/` - didactic Fiber server
+- `java-spring/` - didactic Spring Boot server
 
 ## Canonical endpoint
 

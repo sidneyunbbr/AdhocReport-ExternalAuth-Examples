@@ -7,12 +7,12 @@ Use this sequence to expand examples safely.
 - [x] Contract + integration docs
 
 ## Phase 2
-- [ ] .NET ASP.NET sample
-- [ ] Java Spring Boot sample
+- [x] .NET ASP.NET sample
+- [x] Java Spring Boot sample
 
 ## Phase 3
-- [ ] Go sample
-- [ ] Python FastAPI sample
+- [x] Go sample
+- [x] Python FastAPI sample
 
 ## For each new implementation
 1. Keep same route and payload contract.
