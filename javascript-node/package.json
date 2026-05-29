@@ -1,0 +1,14 @@
+{
+	"name": "adhocreport-external-auth-node-example",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Didactic Node.js external auth server for AdhocReport ServerApp",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"express": "^4.21.2",
+		"selfsigned": "^2.4.1"
+	}
+}
