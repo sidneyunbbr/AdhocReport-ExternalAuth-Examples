@@ -14,6 +14,9 @@ Use this sequence to expand examples safely.
 - [x] Go sample
 - [x] Python FastAPI sample
 
+## Phase 4
+- [x] PHP plain sample
+
 ## For each new implementation
 1. Keep same route and payload contract.
 2. Keep same success/deny semantics.

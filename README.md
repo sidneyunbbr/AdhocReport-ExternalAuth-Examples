@@ -20,6 +20,7 @@ This repository centralizes those artifacts in one place.
 - `python-fastapi/` - didactic FastAPI server
 - `go-fiber/` - didactic Fiber server
 - `java-spring/` - didactic Spring Boot server
+- `php-plain/` - didactic plain PHP server
 
 ## Canonical endpoint
 
