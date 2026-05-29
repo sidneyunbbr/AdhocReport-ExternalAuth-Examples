@@ -21,6 +21,10 @@ Use this sequence to expand examples safely.
 4. Add troubleshooting section.
 5. Add security notes and production deltas.
 
+## Current documentation baseline
+- `docs/06-troubleshooting.md`
+- `docs/07-security-hardening.md`
+
 ## Suggested contribution template
 - Runtime version
 - Install steps

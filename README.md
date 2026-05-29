@@ -1,31 +1,75 @@
-# AdhocReport External Auth Examples (Starter)
+# AdhocReport External Auth Examples
 
-This folder is a **publish-ready starter** for a public repository with didactic external authentication servers.
+Reference implementations and documentation for building external authentication servers compatible with `AdhocReport.ServerApp`.
 
-## Goal
-Provide clear, practical examples of how an external server must answer `AdhocReport.ServerApp` authentication requests.
+## Why this repository exists
 
-## Proposed public repository name
-- `AdhocReport-ExternalAuth-Examples`
+Customers integrating external authentication often ask for:
 
-## Suggested structure
-- `docs/` - canonical contract, rules, integration, troubleshooting
-- `javascript-node/` - first didactic implementation (no database seed required)
-- `dotnet-aspnet/` - future example
-- `java-spring/` - future example
-- `go-fiber/` - future example
+- a canonical request/response contract
+- practical code in different technologies
+- troubleshooting and production hardening guidance
 
-## Included in this starter
-- Canonical contract documentation
-- ServerApp integration tutorial
-- First Node.js implementation with in-memory users
+This repository centralizes those artifacts in one place.
 
-## Existing internal references you can adapt
-- `scr/App/Presentation/AdhocReport.Web.UI/AdhocReport.ServerApp/ExternalAuth-User-Manual.md`
-- `scr/App/Presentation/AdhocReport.Web.UI/AdhocReport.ServerApp/ExternalAuth-Mental-Map.md`
+## What you will find
 
-## Publish flow
-1. Copy this folder to a new repository root.
-2. Rename repository to your final public name.
-3. Keep `javascript-node` as the first working sample.
-4. Add new language servers following the same docs + endpoint contract.
+- `docs/` - protocol, integration guide, troubleshooting, and security notes
+- `javascript-node/` - didactic Node.js server (HTTPS + in-memory users)
+- `dotnet-aspnet/` - didactic ASP.NET server
+
+## Canonical endpoint
+
+- `POST /api/external-auth/validate`
+
+### Request (one identifier + password)
+
+```json
+{
+  "username": "john.doe",
+  "password": "S3cret!"
+}
+```
+
+or
+
+```json
+{
+  "externalUserId": "ext-usr-001",
+  "password": "S3cret!"
+}
+```
+
+### Success response
+
+```json
+{
+  "isAuthenticated": true,
+  "userContext": {
+	"userId": "ext-usr-001"
+  },
+  "fullName": "John Doe",
+  "email": "john.doe@company.com"
+}
+```
+
+`email` and `userContext.userId` are required on successful authentication.
+
+## Quick navigation
+
+1. Start here: `docs/01-overview.md`
+2. Contract details: `docs/02-canonical-contract.md`
+3. ServerApp integration: `docs/03-serverapp-integration.md`
+4. Troubleshooting: `docs/06-troubleshooting.md`
+5. Security hardening: `docs/07-security-hardening.md`
+
+## Contribution model
+
+Each new language sample should:
+
+1. Keep the same endpoint and payload semantics.
+2. Include a self-contained quick-start README.
+3. Provide allow/deny request examples.
+4. Explicitly document production deltas.
+
+See `docs/05-roadmap-multi-language.md` for the expansion plan.
